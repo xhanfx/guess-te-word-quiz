@@ -1,0 +1,368 @@
+:root {
+  --primaryBlue: rgb(0, 102, 204);
+  --secondaryBlue: #3DB2FF;
+  --error: #ff0000;
+  --red: rgb(219, 47, 28);
+  --green: #1bce57;
+  /* theme ku */
+  --orange: #dd9b21;
+  --green-transparent: rgba(27, 206, 87, 0.3);
+  --orange-transparent: rgba(221, 155, 33, 0.3);
+  --red-transparent: rgba(219, 47, 28, 0.3);
+  --dark:#141414;
+  --gray: #333333;
+}
+
+*, th {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+main h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#previousScore {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  background-color: rgba(173, 173, 173, 0.562);
+  padding: 25px;
+  padding-top: 13px;
+  backdrop-filter: blur(10px) saturate(168%);
+  border-radius: 12px;
+  text-align: center;
+}
+
+#previousScore h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+th {
+  padding: 7px;
+}
+
+header {
+  text-align: center;
+  width: 100%;
+  background: rgba(136, 136, 136, 0.582);
+  backdrop-filter: blur(10px) saturate(168%);
+  -webkit-backdrop-filter: blur(10px) saturate(168%);
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 10px;
+  padding: 10px 0 10px 0;
+}
+h1>span{
+  color:var(--orange);
+}
+.wrapper {
+  width: 50%;
+  min-width: 390px;
+  height: 200px;
+  color: var(--dark);
+  backdrop-filter: blur(10px) saturate(168%);
+  -webkit-backdrop-filter: blur(10px) saturate(168%);
+  background-color: rgba(173, 173, 173, 0.562);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+/* bubble */
+.bubble{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+.bubble div{
+  background: var(--orange);
+  border-radius: 100%;
+}
+.bubble div:nth-child(1){
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+}
+.bubble div:nth-child(2){
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+}
+.bubble div:nth-child(3){
+  position: absolute;
+  top: 18%;
+  right: 15%;
+  width: 50px;
+  height: 50px;
+}
+.bubble div:nth-child(4){
+  position: absolute;
+  top: 58%;
+  right: 60%;
+  width: 100px;
+  height: 100px;
+}
+
+/* akhir bubble */
+.topInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.score {
+  font-family: 'Oswald';
+  font-weight: bold;
+  border: 2px solid var(--primaryBlue);
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  border: 2px solid var(--primaryBlue);
+  padding: 4px;
+  width: 137px;
+  border-radius: 7px;
+}
+
+#difficulty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.difficultyBtn {
+  font-size: 20px;
+  color: white;
+  padding: 5px 0px 5px 0px;
+  width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.5s ease;
+  margin-right: 5px;
+}
+
+#ez {
+  background:var(--green-transparent);
+  border:2px solid var(--green);
+}
+
+#ez:hover {
+  background-color: var(--green);
+}
+
+#med {
+  background:var(--orange-transparent);
+  border:2px solid var(--orange);
+}
+
+#med:hover {
+  background-color: var(--orange);
+}
+#hard {
+  background:var(--red-transparent);
+  border:2px solid var(--red);
+}
+
+#hard:hover {
+  background-color: var(--red);
+}
+
+
+.questions {
+  position: relative;
+}
+
+.questions h3 {
+  font-family: 'Oswald';
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+}
+
+.playBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 5px;
+  font-family: 'Oswald';
+  font-weight: bold;
+  font-size: 23px;
+  width: fit-content;
+  background-color: var(--primaryBlue);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.playBtn:hover {
+  background-color: #3B82F6;
+}
+
+.answers {
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  flex-direction: column;
+  width: 48%;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.answers input {
+  font-family: 'Noto Sans';
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 2px solid var(--secondaryBlue);
+  border-radius: 6px;
+}
+
+.answers input:focus {
+  outline: none !important;
+  border:3px solid var(--primaryBlue);
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.answers button {
+  width: 43%;
+  font-family: 'Oswald';
+  font-weight: bold;
+  font-size: 18px;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.outlinedBtn {
+  border: 2px solid var(--primaryBlue);
+  color: var(--primaryBlue);
+  background-color: transparent;
+}
+
+.outlinedBtn:hover {
+  background-color: #F1F5F9;
+}
+
+.nonOutlinedBtn {
+  border: none;
+  background-color: var(--primaryBlue);
+  color: white;
+}
+
+.nonOutlinedBtn:hover {
+  background-color: #3B82F6;
+}
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--primaryBlue);
+  width: 68%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 8px;
+}
+
+.hint h3 {
+  font-family: 'Oswald';
+  font-weight: bold;
+}
+
+.hint button {
+  margin-top: 5px;
+  padding: 8px;
+  border: none;
+  font-family: 'Oswald';
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: var(--primaryBlue);
+  color: white;
+  cursor: pointer;
+}
+
+.hint button:hover {
+  background-color: #3B82F6;
+}
+
+.showHint {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: normal;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.showHint b {
+  font-family: 'Oswald';
+  font-size: 17px;
+}
+
+
+/* Animasi background */
+@keyframes change {
+  0%{
+      background-position: 0 50%;
+  }
+  50%{
+      background-position: 100% 50%;
+  }
+  100%{
+      background-position: 0 50%;
+  }
+}
+
+/* animasi bubble */
+@keyframes animate {
+  0%{
+      transform: scale(0) translateY(0) rotate(0);
+      opacity: 1;
+  }
+  100%{
+      transform: scale(1.3) translateY(-290px) rotate(360deg);
+      opacity: 0;
+  }
+
+}
